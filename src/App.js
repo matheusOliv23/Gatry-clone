@@ -1,6 +1,6 @@
 import React from "react";
 import PromotionCard from "./components/Promotion/Card/Card";
-
+import GlobalStyle from './styles/global'
 function App() {
 
   const promotion = {
@@ -20,7 +20,8 @@ function App() {
 
 
   return(
-    <div className="app">
+    <div>
+      <GlobalStyle/>
       <PromotionCard promotion={promotion}/>
     </div>
   )

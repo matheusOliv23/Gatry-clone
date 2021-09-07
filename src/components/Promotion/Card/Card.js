@@ -1,21 +1,37 @@
 import React from 'react'
+import { 
+    PromoCard, 
+    PromoFooter, 
+    PromoImg, 
+    PromoTitle, 
+    PromoPrice, 
+    PromoComment,
+    PromoCommentCount,
+    PromoLink,
+    PromoInfo
+} from './style'
+
 
 const PromotionCard = ({promotion}) => (
-    <div>
-        <img src={promotion.imageUrl} alt="imagem do computador" />
-        <div>
-            <h1>{promotion.title}</h1>
-            <span>R$ {promotion.price}</span>
-            <footer>
+    <PromoCard>
+        <PromoImg src={promotion.imageUrl} alt="imagem do computador"/>
+        <PromoInfo>
+            <PromoTitle >{promotion.title}</PromoTitle>
+            <PromoPrice>R$ {promotion.price}</PromoPrice>
+            <PromoFooter>
                 {promotion.comments.length > 0 && (
-                    <div>"{promotion.comments[0].comment}"</div>
+                    <PromoComment>"{promotion.comments[0].comment}"</PromoComment>
                 )}
 
-                <div>{promotion.comments.length} Comentários</div>
-                <a href={promotion.url} target="_blank" rel="noreferrer"> Ir para o site </a>
-            </footer>
-        </div>
-    </div>)
+                <PromoCommentCount>{promotion.comments.length} Comentário{promotion.comments.length > 1 ? 's' : ''}</PromoCommentCount>
+                <PromoLink href={promotion.url} target="_blank" rel="noreferrer"> Ir para o site </PromoLink>
+            </PromoFooter>
+        </PromoInfo>
+    </PromoCard>
+    
+    
+    )
+    
 
 
 export default PromotionCard
