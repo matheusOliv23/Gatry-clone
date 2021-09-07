@@ -14,7 +14,7 @@ import {
 
 const PromotionCard = ({promotion}) => (
     <PromoCard>
-        <PromoImg src={promotion.imageUrl} alt="imagem do computador"/>
+        <PromoImg src={promotion.imageUrl} alt={promotion.title}/>
         <PromoInfo>
             <PromoTitle >{promotion.title}</PromoTitle>
             <PromoPrice>R$ {promotion.price}</PromoPrice>
