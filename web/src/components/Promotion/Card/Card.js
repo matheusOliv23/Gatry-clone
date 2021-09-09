@@ -27,9 +27,7 @@ const PromotionCard = ({promotion}) => (
                 <PromoLink href={promotion.url} target="_blank" rel="noreferrer"> Ir para o site </PromoLink>
             </PromoFooter>
         </PromoInfo>
-    </PromoCard>
-    
-    
+    </PromoCard>   
     )
     
 
