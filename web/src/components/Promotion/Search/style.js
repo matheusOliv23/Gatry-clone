@@ -24,7 +24,7 @@ export const Input = styled.section`
     width: 100%;
     padding: 0 0.5rem;
     font-size: 1rem;
-    border: 1px solid blue;
+    border: 1px solid #ccc;
     border-radius: 0.5rem;
     outline: none;
   }
