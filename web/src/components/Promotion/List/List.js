@@ -8,7 +8,7 @@ const PromotionList = ({ loading, promotions }) => {
   }
 
   return (
-    <div>
+    <div className="promotion-list">
       {promotions.map(promotion => (
         <PromotionCard promotion={promotion} />
       ))}
