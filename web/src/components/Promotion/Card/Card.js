@@ -1,35 +1,37 @@
 import React from 'react'
-import { 
-    PromoCard, 
-    PromoFooter, 
-    PromoImg, 
-    PromoTitle, 
-    PromoPrice, 
-    PromoComment,
-    PromoCommentCount,
-    PromoLink,
-    PromoInfo
-} from './style'
+import './style.css'
 
-
-const PromotionCard = ({promotion}) => (
-    <PromoCard>
-        <PromoImg src={promotion.imageUrl} alt={promotion.title}/>
-        <PromoInfo>
-            <PromoTitle >{promotion.title}</PromoTitle>
-            <PromoPrice>R$ {promotion.price}</PromoPrice>
-            <PromoFooter>
-                {promotion.comments.length > 0 && (
-                    <PromoComment>"{promotion.comments[0].comment}"</PromoComment>
-                )}
-
-                <PromoCommentCount>{promotion.comments.length} Comentário{promotion.comments.length > 1 ? 's' : ''}</PromoCommentCount>
-                <PromoLink href={promotion.url} target="_blank" rel="noreferrer"> Ir para o site </PromoLink>
-            </PromoFooter>
-        </PromoInfo>
-    </PromoCard>   
-    )
-    
-
+const PromotionCard = ({ promotion }) => (
+  <div className="promotion-card">
+    <img
+      src={promotion.imageUrl}
+      alt={promotion.title}
+      className="promotion-card__image"
+    />
+    <div className="promotion-card__info">
+      <h1 className="promotion-card__title">{promotion.title}</h1>
+      <span className="promotion-card__price">R$ {promotion.price}</span>
+      <footer className="promotion-card__footer">
+        {promotion.comments.length > 0 && (
+          <div className="promotion-card__comment">
+            "{promotion.comments[0].comment}"
+          </div>
+        )}
+        <div className="promotion-card__comments-count">
+          {promotion.comments.length}{' '}
+          {promotion.comments.length > 1 ? 'Comentários' : 'Comentário'}
+        </div>
+        <a
+          href={promotion.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="promotion-card__link"
+        >
+          IR PARA O SITE
+        </a>
+      </footer>
+    </div>
+  </div>
+)
 
 export default PromotionCard

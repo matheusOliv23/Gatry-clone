@@ -1,5 +1,4 @@
-import { createGlobalStyle } from "styled-components";
-
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 
@@ -12,7 +11,7 @@ export default createGlobalStyle`
 
 body{
     font-family: 'Robot', sans-serif;
-    width: 100%;
+    width: 100%;   
 }
 
 `
