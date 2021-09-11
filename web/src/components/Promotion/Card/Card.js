@@ -21,7 +21,7 @@ const PromotionCard = ({ promotion }) => (
         <a
           href={promotion.url}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="promotion-card__link"
         >
           IR PARA O SITE

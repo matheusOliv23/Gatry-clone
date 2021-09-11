@@ -1,5 +1,6 @@
 import React from 'react'
 import PromotionCard from '../Card/Card'
+import UIModal from '../../UI/Modal/Modal'
 import './List.css'
 
 const PromotionList = ({ loading, promotions, error }) => {
@@ -20,6 +21,9 @@ const PromotionList = ({ loading, promotions, error }) => {
       {promotions.map(promotion => (
         <PromotionCard promotion={promotion} />
       ))}
+      <UIModal isOpen>
+        <h1>Comentários</h1>
+      </UIModal>
     </div>
   )
 }
