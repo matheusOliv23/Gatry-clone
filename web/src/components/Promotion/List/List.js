@@ -2,9 +2,17 @@ import React from 'react'
 import PromotionCard from '../Card/Card'
 import './List.css'
 
-const PromotionList = ({ loading, promotions }) => {
-  if (loading) {
+const PromotionList = ({ loading, promotions, error }) => {
+  if (error) {
+    return <div>Algo deu errado!</div>
+  }
+
+  if (loading || promotions === null) {
     return <div>Carregando...</div>
+  }
+
+  if (promotions.length === 0) {
+    return <div>Nenhum resultado encontrado</div>
   }
 
   return (

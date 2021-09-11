@@ -12,14 +12,17 @@ const initialValue = {
 }
 
 const PromotionForm = ({ id }) => {
-  const [values, setValues] = useState(initialValue)
+  const [values, setValues] = useState(id ? null : initialValue)
   const history = useHistory()
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/promotions/${id}`).then(response => {
-        setValues(response.data)
-      }, [])
+      axios.get(`http://localhost:5000/promotions/${id}`).then(
+        response => {
+          setValues(response.data)
+        },
+        [id]
+      )
     }
   })
 
@@ -34,12 +37,16 @@ const PromotionForm = ({ id }) => {
 
     const method = id ? 'put' : 'post'
     const url = id
-      ? 'http://localhost:5000/promotions/${id}'
+      ? `http://localhost:5000/promotions/${id}`
       : 'http://localhost:5000/promotions'
 
     axios[method](url, values).then(response => {
       history.push('/')
     })
+  }
+
+  if (!values) {
+    return <div>Carregando...</div>
   }
 
   return (
