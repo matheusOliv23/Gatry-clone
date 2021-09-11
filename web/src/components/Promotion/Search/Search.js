@@ -8,7 +8,7 @@ import { Container, Header, Input } from './style'
 const PromotionSearch = () => {
   const [search, setSearch] = useState('')
   const [load, loadInfo] = useApi({
-    url: 'http://localhost:5000/promotions',
+    url: '/promotions',
     method: 'get',
     params: {
       _embed: 'comments',
