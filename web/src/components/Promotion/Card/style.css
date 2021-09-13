@@ -43,12 +43,19 @@
 .promotion-card__comment {
   color: #95A5A6;
   font-weight: 700;
+  max-width: 340px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .promotion-card__comments-count {
   margin-left: auto;
   margin-right: 20px;
   color: #3498DB;
+  background-color: unset;
+  border: unset;
+  white-space: nowrap;
 }
 
 .promotion-card__link {
@@ -57,4 +64,17 @@
   color: #3498DB;
   text-decoration: none;
   padding: 8px 10px;
+  white-space: nowrap;
 }
+
+.promotion-card__info{
+  flex-grow: 1;
+}
+ .promotion-card__edit-button{
+  border: 1px solid #3498DB;
+  border-radius: 4px;
+  color: #3498DB;
+  text-decoration: none;
+  padding: 8px 10px;
+  margin-left: 0.8rem;
+ }  
